@@ -1,8 +1,16 @@
 {
-    "extends": "airbnb",
-    "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "react/prefer-stateless-function": false,
-        "react/forbid-prop-types": [0, {"forbid":[]}]
-      }
+  "env": {
+    "cypress/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:cypress/recommended"
+  ],
+  "plugins": ["cypress"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": false,
+    "react/forbid-prop-types": [0, { "forbid": [] }]
+  }
 }
