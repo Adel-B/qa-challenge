@@ -5,19 +5,19 @@ import './index.css';
 class CrewMember extends Component {
   render() {
     const { member, onUp, onDown } = this.props;
-    const { name } = member;
+    const { name, login } = member;
     return (
-      <div className="CrewMember-container">
-        <div className="CrewMember-info">
-          <div className="CrewMemeber-photo" style={{ backgroundImage: `url(${member.picture.medium})` }} />
-          <div className="CrewMemeber-name">
+      <div className="CrewMember-container" data-testid={`crew-member-container-${login.uuid}`} >
+        <div className="CrewMember-info" >
+          <div className="CrewMemeber-photo" style={{ backgroundImage: `url(${member.picture.medium})` }} data-testid={`crew-member-photo-${login.uuid}`} />
+          <div className="CrewMemeber-name" data-testid={`crew-member-info-text-${login.uuid}`} >
             <div>{`${name.first} ${name.last}`}</div>
             <div>{member.location.city}</div>
           </div>
         </div>
         <div className="CrewMember-toolbar">
-          {onDown && <button onClick={onDown} type="button">&lt;</button>}
-          {onUp && <button onClick={onUp} className="CrewMember-up" type="button">&gt;</button>}
+          {onDown && <button onClick={onDown} type="button" data-testid="button-down-satge">&lt;</button>}
+          {onUp && <button onClick={onUp} className="CrewMember-up" type="button" data-testid="button-up-satge">&gt;</button>}
         </div>
       </div>
     );
