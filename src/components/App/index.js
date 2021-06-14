@@ -14,13 +14,13 @@ class App extends Component {
         </header>
         <Filters />
         <div className="App-container">
-          <div className="App-column">
+          <div className="App-column" data-testid="column-applied">
             <CrewContainer name="Applied" hiringStage="applied" />
           </div>
-          <div className="App-column">
+          <div className="App-column"  data-testid="column-interviewing">
             <CrewContainer name="Interviewing" hiringStage="interviewing" />
           </div>
-          <div className="App-column">
+          <div className="App-column" data-testid="column-hired">
             <CrewContainer name="Hired" hiringStage="hired" />
           </div>
         </div>

@@ -11,11 +11,11 @@ class Filters extends Component {
     return (
       <Form id="filters" onSubmit={formState => setFilters(formState)}>
         Name:
-        <Text field="name" id="name" initialValue={filters.name} />
+        <Text field="name" id="name" initialValue={filters.name} data-testid="input-name"/>
         City:
-        <Text field="city" id="city" initialValue={filters.city} />
-        <button type="submit">Submit</button>
-        <button type="button" onClick={clearFilters}>Clear</button>
+        <Text field="city" id="city" initialValue={filters.city} data-testid="input-city"/>
+        <button type="submit" data-testid="submit-button">Submit</button>
+        <button type="button" onClick={clearFilters} data-testid="clear-button">Clear</button>
       </Form>);
   }
 }
