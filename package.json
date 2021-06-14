@@ -1,6 +1,6 @@
 {
   "name": "crew-applications",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "private": true,
   "dependencies": {
     "informed": "^1.10.5",
@@ -21,7 +21,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "gherkin-lint:run": "gherkin-lint -c .gherkin-lintrc cypress/integration/features/",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "commitizen": "^4.2.4",
@@ -37,7 +38,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.11.1",
     "gherkin-lint": "^4.2.2",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.1",
+    "semantic-release": "^17.4.3"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
@@ -47,5 +49,12 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adel-B/qa-challenge.git"
+  },
+  "publishConfig": {
+    "access": "restricted"
   }
 }
