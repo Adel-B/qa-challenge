@@ -15,7 +15,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:ci": "react-scripts start",
     "build": "react-scripts build",
+    "build:ci": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "gherkin-lint:run": "gherkin-lint -c .gherkin-lintrc cypress/integration/features/",
