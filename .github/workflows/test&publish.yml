@@ -3,9 +3,9 @@ name: Cypress Tests
 on:
   push:
     branches: [ master ]
-    branches-ignore:
-      - "renovate/**"
-
+  pull_request:
+    branches: '*'
+    
 jobs:
   install:
     runs-on: ubuntu-latest
