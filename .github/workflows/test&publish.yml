@@ -4,8 +4,8 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    branches: '*'
-    
+    branches-ignore:
+      - "renovate/**"    
 jobs:
   install:
     runs-on: ubuntu-latest
