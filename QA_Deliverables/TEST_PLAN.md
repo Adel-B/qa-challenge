@@ -95,3 +95,6 @@ The test plans I propose here, have 6 main parts:
 | FC09|Filter by malformed Name (special character) | Candidates filtered/ display ok   | ? | Yes||App action + Page Object|
 | FC10|Filter by malformed City (special character) | Candidates filtered/ display ok   | ? | Yes||App action + Page Object|
 | FC11|Filter by Name with just one character (special character) | Candidates filtered/ display ok   | ? | Yes||App action + Page Object|
+| FC12|Filter by part of the Name | Candidates filtered/ display ok   | ? | Yes||App action + Page Object|
+| FC13|Filter by part of the City name | Candidates filtered/ display ok   | ? | Yes||App action + Page Object|
+| FC14|Clear filters | Filter cleared / back to last display before filtering   | ? | Yes||App action + Page Object|
