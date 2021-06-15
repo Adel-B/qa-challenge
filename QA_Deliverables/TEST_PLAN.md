@@ -57,24 +57,25 @@ The test plans I propose here, have 6 main parts:
   
 &nbsp;
 
-## Test Plan 1 : Feature “Hired Process”
+## Test Plan 1 : Feature “Hiring Process”
 &nbsp;
 
   
   
 | Scenario Id | Scenario Description| Expected Result| Latest Result <br>(Pass/Fail) | Automated <br>(Yes/No) |Comments| Test patterns|                                      
 | - | -- | - | - | - | - |-|
-| HP01| Display the Hired Borad| All the candidates are visible within the Hired board with the correct status   | Pass | Yes||App action + Page Object|
+| HP01| Display the Hired Borad| All the candidates are visible within the Hired board with the correct status   | Pass | Yes||Page Object only|
 | HP02| Move candidate from "Applied" to "interviewing"| candidate moved   | Pass | Yes||App action + Page Object|
 | HP03 | Move candidate from "interviewing" to "Hired"| candidate moved   | Pass | Yes||App action + Page Object|
 | HP04| Move candidate from "Hired" to "interviewing"| candidate moved   | Pass | Yes||App action + Page Object|
 | HP05| Move candidate from "interviewing" to "Applied"| candidate moved   | Pass | Yes||App action + Page Object|
-| HP07| Move candidate from "Applied" to "Applied"| candidate moved   | ? | Yes|Not possible action. But relevant scenario. it will be part of a test to make sure that the state of a candidate does not change after a reload of the page or the move of another candidate. And also it should be managed by REDUX reducer and covered by a Unit test at least|App action only|
-| HP08| Move candidate from "interviewing" to "interviewing"| candidate moved   | ? | Yes| same comment as HP07|App action only|
-| HP09| Move candidate from "Hired" to "Hired"| candidate moved   | ? | Yes|same comment as HP07|App action only|
-| HP10| Move candidate from "Applied" to "Hired"| candidate moved   | ? | Yes| should not be possible. it should be managed by REDUX reducer and covered by a Unit test at least|App action only|
-| HP11| Move candidate from "Hired" to "Applied"| candidate moved   | ? | Yes|same comment as HP11|App action only|
-| HP12| Move candidate from "Hired" to "Hired"| candidate moved   | ? | Yes|same comment as HP11|App action only|
+| HP06| Move candidate from "Applied" to "Applied"| candidate moved   | ? | Yes|Not possible action. But relevant scenario. it will be part of a test to make sure that the state of a candidate does not change after a reload of the page or the move of another candidate. And also it should be managed by REDUX reducer and covered by a Unit test at least|App action only|
+| HP07| Move candidate from "interviewing" to "interviewing"| candidate moved   | ? | Yes| same comment as HP07|App action only|
+| HP08| Move candidate from "Hired" to "Hired"| candidate moved   | ? | Yes|same comment as HP07|App action only|
+| HP09| Move candidate from "Applied" to "Hired"| candidate moved   | ? | Yes| should not be possible. it should be managed by REDUX reducer and covered by a Unit test at least|App action only|
+| HP10| Move candidate from "Hired" to "Applied"| candidate moved   | ? | Yes|same comment as HP11|App action only|
+| HP11| State persisted after page reload| state persisted   | Yes | Yes|same comment as HP11|App action only|
+| HP12| Move members via UI buttons | candidate moved + button displayed depending on the state  | ? | Yes||(not via the redux store)|
 
 &nbsp;
 &nbsp;
@@ -84,7 +85,7 @@ The test plans I propose here, have 6 main parts:
   
 | Scenario Id | Scenario Description| Expected Result| Latest Result <br>(Pass/Fail) | Automated <br>(Yes/No) |Comments| Test patterns|                                      
 | - | -- | - | - | - | - |-|
-| FC01|Filter by Full Name and City | Candidates filtered/ display ok   | Pass | Yes||App action + Page Object|
+| FC01|Filter by Full Name and City | Candidates filtered/ display ok   | Pass | Yes||Page Object|
 | FC02|Filter by Full Name only | Candidates filtered/ display ok   | Pass | Yes||App action + Page Object|
 | FC03 |Filter by City only | Candidates filtered/ display ok   | Pass | Yes||App action + Page Object|
 | FC04|Filter by First Name only| Candidates filtered/ display ok   | Pass | Yes||App action + Page Object|

@@ -7,11 +7,11 @@ export const hiringBoard = {
     photo: (params) =>
       `${hiringBoard.crewMember.container(
         params,
-      )} [data-testid^="crew-member-photo-${uuid}"]`,
+      )} [data-testid^="crew-member-photo-${params.uuid}"]`,
     infoText: (params) =>
       `${hiringBoard.crewMember.container(
         params,
-      )} [data-testid^="crew-member-info-text-${uuid}"]`,
+      )} [data-testid^="crew-member-info-text-${params.uuid}"]`,
     upButton: (params) =>
       `${hiringBoard.crewMember.container(
         params,
