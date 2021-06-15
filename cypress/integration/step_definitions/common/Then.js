@@ -1,5 +1,5 @@
 import { Then } from "cypress-cucumber-preprocessor/steps";
-import { hiringBoard } from '../../../helpers/selectors'
+import { hiringBoard, filterCrewMember } from '../../../helpers/selectors'
 
 
 Then(/^All the Crew Members are displayed$/, function () {
@@ -19,4 +19,10 @@ Then('I see the crew member {string} in the stage {word}', (uuid, stage) => {
     cy.get(hiringBoard.crewMember.container({ uuid: uuid, column: stage })).should('be.visible');
     cy.get(hiringBoard.crewMember.photo({ uuid: uuid, column: stage })).should('be.visible');
     cy.get(hiringBoard.crewMember.infoText({ uuid: uuid, column: stage })).should('be.visible');
+});
+
+
+Then('I see the filter is cleared', () => {
+    cy.get(filterCrewMember.name.input).should('have.value', '');
+    cy.get(filterCrewMember.city.input).should('have.value', '');
 });
