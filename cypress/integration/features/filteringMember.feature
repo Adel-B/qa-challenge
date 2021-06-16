@@ -7,7 +7,7 @@ Feature: Filtering Crew Members
    Scenario Outline: Filter Crew Member by name and/or City
       Given I cleared the filter
       Then I see the filter is cleared
-      And All the Crew Members are displayed
+      And I see all the Crew Members displayed
       When I filter by <name> and <city>
       Then I see the filtered members
 

@@ -2,7 +2,7 @@ import { Then } from "cypress-cucumber-preprocessor/steps";
 import { hiringBoard, filterCrewMember } from '../../../helpers/selectors'
 
 
-Then(/^All the Crew Members are displayed$/, function () {
+Then(/^I see all the Crew Members displayed$/, function () {
     const crewMembers= this.initialData.data;
     crewMembers.forEach(function(crewMember) {
         cy.get(hiringBoard.crewMember.container({ uuid: crewMember.login.uuid, column: crewMember.hiringStage })).should('be.visible');
