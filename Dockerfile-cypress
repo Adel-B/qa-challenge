@@ -1,0 +1,14 @@
+#base image
+FROM cypress/base:14.16.0
+
+# set working directory
+WORKDIR /app
+
+#copy cypress files and folders
+COPY package.json yarn.lock ./
+
+# install cypress
+RUN yarn install
+
+# confirm the cypress install
+RUN ./node_modules/.bin/cypress verify

@@ -22,7 +22,13 @@
     "eject": "react-scripts eject",
     "gherkin-lint:run": "gherkin-lint -c .gherkin-lintrc cypress/integration/features/",
     "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "cypress:open": "cypress open",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "cypress:run:electron": "cypress run",
+    "docker:build": "docker-compose build",
+    "docker:test": "docker-compose up --abort-on-container-exit --exit-code-from tests",
+    "docker:test:run": "yarn run docker:build && yarn run docker:test"
   },
   "devDependencies": {
     "commitizen": "^4.2.4",
