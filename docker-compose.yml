@@ -1,0 +1,30 @@
+services:
+  crew_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crew_container
+    restart: always
+    ports:
+      - '5000:5000'
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://crew_app:5000']
+      interval: 20s
+      timeout: 120s
+      retries: 5
+
+  tests:
+    image: cypress
+    build:
+      context: .
+      dockerfile: Dockerfile-cypress
+    container_name: cypress
+    depends_on:
+      crew_app:
+        condition: service_healthy
+    environment:
+      - CYPRESS_baseUrl=http://crew_app:5000
+    command: npx cypress run
+    volumes:
+      - ./cypress:/app/cypress
+      - ./cypress.json:/app/cypress.json

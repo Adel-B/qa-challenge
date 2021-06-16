@@ -1,20 +1,35 @@
-# qa-challenge
-QA of a React App with Cypress
-# CREW APPLICATION
-
-Simple application which represents dashboard with candidates.
-
-### Running locally
-`yarn install`
-
-`yarn start`
-
-App will be available on http://localhost:3000
+[![Cypress](https://img.shields.io/badge/cypress-dashboard-brightgreen.svg)](https://dashboard.cypress.io/projects/jbzwce/runs)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 
-### Running in docker
-`docker build -t crew-app .`
 
-`docker run -it --rm -p 5000:5000 --name crew-container crew-app`
+## Welcome to OpenOceanStudio: Crew Application Project  ❤️
 
-App will be available on http://localhost:5000
+<img src="./src/assets/images/logo.png" width="128" height="128" alt="Crew App logo" />
+
+# Wiki content
+
+## How to?
+
+- [Run the Crew Application](./wiki/how-to/run-app.md)
+- [Run the Cypress tests](./wiki/how-to/run-tests.md)
+- Useful links
+
+## General
+
+- Development
+- Deployment
+- Tests
+
+## Architectures
+
+- [Functional architecture](./wiki/architecture/architecture.md)
+- Infrastructure
+- .....
+
+## Test
+
+- [About the tests](/wiki/tests/README.md)
+- [Test Plan](./QA_Deliverables/TEST_PLAN.md)
+- [Test Results](/wiki/tests/results.md)
+- [Performance](/wiki/tests/performance.md)
