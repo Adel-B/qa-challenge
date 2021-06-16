@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: CI
 
 on:
   push:
@@ -8,7 +8,17 @@ on:
       - "renovate/**"    
 jobs:
   install:
-    runs-on: ubuntu-latest
+    name: Install Dependencies
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+        os: [ubuntu-latest]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        # As this is a private Repo (so with limited automation minutes/mounth), 
+        # I limited job run to just one OS and one node version 
+
     container: cypress/browsers:node14.15.0-chrome86-ff82
     steps:
       - name: Checkout
@@ -32,8 +42,9 @@ jobs:
           path: build
 
   ui-chrome-tests:
+    name: Cypress Tests
     timeout-minutes: 15
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     container: cypress/browsers:node14.15.0-chrome86-ff82
     needs: install
     strategy:
@@ -45,6 +56,8 @@ jobs:
       matrix:
         # run copies of the current job in parallel
         containers: [1, 2, 3]
+        node-version: [12.x]
+        os: [ubuntu-latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -71,21 +84,4 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # Recommended: pass the GitHub token lets this action correctly
           # determine the unique run id necessary to re-run the checks
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  publish:
-    runs-on: ubuntu-latest
-    needs: [ui-chrome-tests]
-    steps:
-      - name: Checkout 
-        uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install Dependencies
-        run: yarn
-      - name: Release
-        run: npx run semantic-release
-        env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
