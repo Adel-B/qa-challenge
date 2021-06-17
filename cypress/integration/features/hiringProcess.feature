@@ -5,7 +5,7 @@ Feature: Hiring Process
 
    @hp01 
    Scenario: Display the Crew Members from the initial Data
-      Then All the Crew Members are displayed
+      Then I see all the Crew Members displayed
 
 
 
